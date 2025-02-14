@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Mini App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome to the Mini App!</h2>
+    <p>Click the button below to send a message to the bot.</p>
+    <button onclick="sendMessage()">Send Message</button>
+
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand(); // Expand the mini app to full screen
+
+        function sendMessage() {
+            tg.sendData("Hello from the Mini App!"); // Sends data to the bot
+        }
+    </script>
+</body>
+</html>
